@@ -611,7 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285109452}
-  - component: {fileID: 285109451}
+  - component: {fileID: 285109453}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -619,23 +619,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &285109451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285109450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f0588b260f3344ca350d7530f97d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createInput: {fileID: 1148470410}
-  joinInput: {fileID: 2138934927}
-  nameInput: {fileID: 1584415278}
-  errorNamePanel: {fileID: 913846308}
-  errorRoomPanel: {fileID: 990526680}
 --- !u!4 &285109452
 Transform:
   m_ObjectHideFlags: 0
@@ -651,6 +634,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285109453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285109450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febdb466e0b575a4cb2112e4bc64d608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createInput: {fileID: 1148470410}
+  joinInput: {fileID: 2138934927}
+  nameInput: {fileID: 1584415278}
+  errorNamePanel: {fileID: 913846308}
+  errorRoomPanel: {fileID: 990526680}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 285109451}
+      - m_Target: {fileID: 285109453}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: JoinRoom
         m_Mode: 1
@@ -2626,7 +2626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 285109451}
+      - m_Target: {fileID: 285109453}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CreateRoom
         m_Mode: 1
