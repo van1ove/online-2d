@@ -6,9 +6,9 @@ using Photon.Pun;
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
-    private readonly int _damage = 10;
-    [SerializeField] private GameObject bullet;
+    private const int Damage = 10;
 
+    [SerializeField] private GameObject bullet;
     private PhotonView _bulletView;
     public float lifetime = 5f;
     private float _timer;
@@ -35,7 +35,8 @@ public class Bullet : MonoBehaviour
             PhotonNetwork.Destroy(bullet);
             if (other.gameObject.layer == 6) return;
 
-            other.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, _damage);
+            
+            other.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, Damage);
         }
     }
 }

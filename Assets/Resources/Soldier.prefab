@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 6831158209419162153}
   - component: {fileID: 6831158209419162154}
   - component: {fileID: 2414305512493653297}
+  - component: {fileID: 3619185365066008044}
   - component: {fileID: 2213097769936209752}
   - component: {fileID: -3538783376994322183}
   - component: {fileID: 851816869487832057}
@@ -433,6 +434,18 @@ MonoBehaviour:
   canvas: {fileID: 2779880644836634571}
   playerName: {fileID: 4095129239177272492}
   moveSpeed: 5
+--- !u!114 &3619185365066008044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831158209419162150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dd565a723ad4943b3e280b59e0b05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2213097769936209752
 MonoBehaviour:
   m_ObjectHideFlags: 0
