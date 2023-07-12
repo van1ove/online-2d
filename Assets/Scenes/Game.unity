@@ -170,31 +170,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106840940}
-  - component: {fileID: 106840939}
+  - component: {fileID: 106840941}
   m_Layer: 0
-  m_Name: Spawn
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &106840939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106840938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d510c4eee178d554cb3d96b27cfcf75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 6831158209419162150, guid: 646628e6487ec1c47aa97ef5d2af7fdf, type: 3}
-  minX: -13
-  minY: -8
-  maxX: 13
-  maxY: 8
 --- !u!4 &106840940
 Transform:
   m_ObjectHideFlags: 0
@@ -203,13 +186,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106840938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3354609, y: 1.0928285, z: -9.970732}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106840941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106840938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de96f26444447443a136883f21a812b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6831158209419162150, guid: 6b15bb67120a9d24db5d7a4a93e30fa3, type: 3}
+  minX: -13
+  minY: -8
+  maxX: 13
+  maxY: 8
 --- !u!1 &141782453
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 273051665}
   - component: {fileID: 273051664}
   - component: {fileID: 273051663}
-  - component: {fileID: 273051662}
+  - component: {fileID: 273051667}
   m_Layer: 5
   m_Name: Fire Button
   m_TagString: Untagged
@@ -283,20 +283,6 @@ RectTransform:
   m_AnchoredPosition: {x: -256, y: 256}
   m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &273051662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273051660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 565b271fc42397141801a15514cd3b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.5
-  bulletForce: 10
 --- !u!114 &273051663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +300,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 273051662}
+        - m_Target: {fileID: 273051667}
           m_TargetAssemblyTypeName: Fire, Assembly-CSharp
           m_MethodName: FireButtonDown
           m_Mode: 1
@@ -330,7 +316,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 273051662}
+        - m_Target: {fileID: 273051667}
           m_TargetAssemblyTypeName: Fire, Assembly-CSharp
           m_MethodName: FireButtonUp
           m_Mode: 1
@@ -424,6 +410,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273051660}
   m_CullTransparentMesh: 1
+--- !u!114 &273051667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273051660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbc0ab5d1663b742b6221f4c0c15275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.5
+  bulletForce: 10
 --- !u!1 &324108073
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420034}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -988,7 +988,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420034
+--- !u!114 &519420033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -997,11 +997,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a839ba0f84b219c48b9401e47aba7fad, type: 3}
+  m_Script: {fileID: 11500000, guid: 78f837161429c7e44b2138d2114af480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6831158209419162148, guid: 646628e6487ec1c47aa97ef5d2af7fdf, type: 3}
-  _speed: 4
+  playerTransform: {fileID: 6831158209419162148, guid: 6b15bb67120a9d24db5d7a4a93e30fa3, type: 3}
+  speed: 4
 --- !u!1 &601463261
 GameObject:
   m_ObjectHideFlags: 0
