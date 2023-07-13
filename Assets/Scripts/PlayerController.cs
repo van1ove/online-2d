@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class PlayerController : MonoBehaviourPun
@@ -89,5 +88,8 @@ public class PlayerController : MonoBehaviourPun
         _collider.enabled = false;
         _rb.isKinematic = true;
         _animator.SetTrigger("Died");
+        
+        GameManager.Instance.DestroyPlayer(gameObject);
+        GameManager.Instance.TurnGameOverPanel();
     }
 }
