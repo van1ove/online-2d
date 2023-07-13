@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 3619185365066008044}
   - component: {fileID: 2213097769936209752}
   - component: {fileID: -3538783376994322183}
+  - component: {fileID: -9190998398072926544}
   - component: {fileID: 851816869487832057}
   m_Layer: 3
   m_Name: Soldier
@@ -466,6 +467,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -3538783376994322183}
+  - {fileID: -9190998398072926544}
   - {fileID: 851816869487832057}
   sceneViewId: 0
   InstantiationId: 0
@@ -503,6 +505,22 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-9190998398072926544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831158209419162150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &851816869487832057
 MonoBehaviour:
   m_ObjectHideFlags: 0
