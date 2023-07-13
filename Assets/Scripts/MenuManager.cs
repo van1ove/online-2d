@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
-using UnityEngine.Serialization;
 
 public class MenuManager : MonoBehaviourPunCallbacks
 {

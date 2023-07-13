@@ -28,7 +28,6 @@ public class Health : MonoBehaviour
         _healthBar.fillAmount = (float)_health / MaxHealth;
         if (_health <= 0)
         {
-            //_photonView.RPC("Die", RpcTarget.All);
             _photonView.gameObject.GetComponent<PlayerController>().Die();
             //PhotonNetwork.Destroy(gameObject);
         }

@@ -82,12 +82,9 @@ public class PlayerController : MonoBehaviourPun
             }
         }
     }
-
-    //[PunRPC]
+    
     public void Die()
     {
-        //if (!_view.IsMine) return;
-        
         _isDead = true;
         _collider.enabled = false;
         _rb.isKinematic = true;
