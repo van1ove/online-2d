@@ -34,7 +34,6 @@ public class Bullet : MonoBehaviour
         {
             PhotonNetwork.Destroy(bullet);
             if (other.gameObject.layer == 6) return;
-
             
             other.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, Damage);
         }

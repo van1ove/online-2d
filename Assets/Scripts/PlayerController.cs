@@ -23,9 +23,10 @@ public class PlayerController : MonoBehaviourPun
     private Joystick joystick;
     [SerializeField] private float moveSpeed = 5f;
 
+    private Collider2D _collider;
     private Rigidbody2D _rb;
     private Animator _animator;
-    private bool _isRunning;
+    private bool _isRunning, _isDead;
     private PhotonView _view;
     private float _x, _y, _z;
 
@@ -42,11 +43,13 @@ public class PlayerController : MonoBehaviourPun
     {
         _fire = FindObjectOfType<Fire>();
 
+        _collider = GetComponent<Collider2D>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.freezeRotation = true;
         
         _animator = GetComponent<Animator>();
         _isRunning = false;
+        _isDead = false;
         
         joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<Joystick>();
     }
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviourPun
     private void Update()
     {
         canvas.transform.eulerAngles = new Vector3(0f, 0f, -transform.rotation.z);
-        if (_view.IsMine)
+        if (_view.IsMine && !_isDead)
         {
             _fire.Shoot();
         }
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviourPun
         _x = joystick.Horizontal;
         _y = joystick.Vertical;
         
-        if (_view.IsMine)
+        if (_view.IsMine && !_isDead)
         {
             _rb.velocity = new Vector2(_x * moveSpeed, _y * moveSpeed);
 
@@ -78,5 +81,16 @@ public class PlayerController : MonoBehaviourPun
                 transform.eulerAngles = new Vector3(0f, 0f, -_z);
             }
         }
+    }
+
+    //[PunRPC]
+    public void Die()
+    {
+        //if (!_view.IsMine) return;
+        
+        _isDead = true;
+        _collider.enabled = false;
+        _rb.isKinematic = true;
+        _animator.SetTrigger("Died");
     }
 }
