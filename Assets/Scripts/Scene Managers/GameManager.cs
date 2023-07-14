@@ -25,8 +25,16 @@ public class GameManager : MonoBehaviour
 
     public void TurnGameOverPanel()
     {
+        
         gamePanel.SetActive(false);
-        losePanel.SetActive(true);
+        if (PhotonNetwork.CurrentRoom.PlayerCount != 1)
+        {
+            losePanel.SetActive(true);
+        }
+        else
+        {
+            victoryPanel.SetActive(true);
+        }
     }
     public void OnReturnClick()
     {

@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviourPun
         _animator.SetTrigger("Died");
         
         GameManager.Instance.DestroyPlayer(gameObject);
+        SpawnCoins.StopSpawning();
         GameManager.Instance.TurnGameOverPanel();
     }
 }

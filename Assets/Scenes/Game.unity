@@ -2707,7 +2707,7 @@ MonoBehaviour:
   losePanel: {fileID: 936772188}
   victoryPanel: {fileID: 1825966534}
   playerName: {fileID: 1887271995}
-  coinsAmount: {fileID: 0}
+  coinsAmount: {fileID: 1904263764}
 --- !u!4 &1268674448
 Transform:
   m_ObjectHideFlags: 0
