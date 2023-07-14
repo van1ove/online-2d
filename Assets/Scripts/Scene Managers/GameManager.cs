@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using TMPro;
+
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gamePanel, losePanel, victoryPanel; 
+    [SerializeField] private GameObject gamePanel, losePanel, victoryPanel;
+    [SerializeField] private TextMeshProUGUI playerName, coinsAmount;
     public static GameManager Instance { get; set; }
-
     private void Awake()
     {
         Instance = this;
@@ -21,17 +23,17 @@ public class GameManager : MonoBehaviour
         victoryPanel.SetActive(false);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void TurnGameOverPanel()
     {
         gamePanel.SetActive(false);
         losePanel.SetActive(true);
     }
-
+    public void OnReturnClick()
+    {
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene("Lobby");
+    }
+    
     public void DestroyPlayer(GameObject gameObject)
     {
         StartCoroutine(DeletePlayer(gameObject));
@@ -41,10 +43,21 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.4f);
         PhotonNetwork.Destroy(gameObject);
+        CheckAmount();
     }
-    public void OnReturnClick()
+
+    private void CheckAmount()
     {
-        PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("Lobby");
+        Debug.Log("check");
+        if (PhotonNetwork.CurrentRoom.PlayerCount > 1) return;
+        Victory();
+    }
+
+    private void Victory()
+    {
+        Debug.Log("victory");
+        gamePanel.SetActive(false);
+        losePanel.SetActive(false);
+        victoryPanel.SetActive(true);
     }
 }

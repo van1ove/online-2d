@@ -29,7 +29,6 @@ public class Health : MonoBehaviour
         if (_health <= 0)
         {
             _photonView.gameObject.GetComponent<PlayerController>().Die();
-            //PhotonNetwork.Destroy(gameObject);
         }
     }
 }
