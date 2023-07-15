@@ -4,8 +4,16 @@
 Игра состоит из 3 сцен: Loading, Lobby, Game
 <h1>Loading</h1>
 Игрок находится на этой сцене, пока не подключиться к сети
+
+![Loading](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.461.jpg)
+
 <h1>Lobby</h1>
 Здесь игрок может выбрать себе имя, а также решает: создать ему комнату или присоединиться к уже существующей
+
+![Lobby](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.462.jpg)
+
 <h1>Game</h1>
 Сцена, на которой происходит все основные события. На ней появляются игроки и монеты, которые можно собирать. Игроки могут стрелять друг в другу
 и, если в игрока попадет 10 снарядов, он умирает, после чего можно вернуть назад в лобби
+
+![Game](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.463.jpg)
