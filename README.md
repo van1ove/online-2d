@@ -1,19 +1,19 @@
 # online-2d
-Техническое задание
-<h2>Игра представляет собой 2D онлайн шутер с видом сверху, в котором игроки сражаются между собой и добывают монеты</h2>
-Игра состоит из 3 сцен: Loading, Lobby, Game
-<h1>Loading</h1>
-Игрок находится на этой сцене, пока не подключиться к сети
+Игра представляет собой 2D онлайн шутер с видом сверху, в котором игроки сражаются между собой и добывают монеты
+Игра состоит из 3 сцен: 
+* [Loading](#loading)
+* [Lobby](#lobby)
+* [Game](#game)
 
-![Loading](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.461.jpg)
+## Loading
+На сцене загрузки идет присоединение игрока к серверу
+![screenshot 447](https://github.com/van1ove/online-2d/assets/99884024/dac1eddd-e8ee-4c5e-9ae9-5be8df41c2ed)
 
-<h1>Lobby</h1>
+## Lobby
 Здесь игрок может выбрать себе имя, а также решает: создать ему комнату или присоединиться к уже существующей
+![screenshot 448](https://github.com/van1ove/online-2d/assets/99884024/695df3c6-b485-4aa9-b9d6-3349b8769ef8)
 
-![Lobby](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.462.jpg)
-
-<h1>Game</h1>
+## Game
 Сцена, на которой происходит все основные события. На ней появляются игроки и монеты, которые можно собирать. Игроки могут стрелять друг в другу
 и, если в игрока попадет 10 снарядов, он умирает, после чего можно вернуть назад в лобби
-
-![Game](http://github.com/van1ove/online-2d/blob/master/screens/screenshot.463.jpg)
+![screenshot 449](https://github.com/van1ove/online-2d/assets/99884024/ff021da4-2c84-468a-b0a9-2fa0e81b90b6)
